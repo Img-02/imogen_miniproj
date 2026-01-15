@@ -18,7 +18,6 @@ body {
   background-color: plum;
 }
 
-
 #cell-2:hover {
   background-color: plum;
 }
@@ -50,8 +49,6 @@ body {
 #cell-9:hover {
   background-color: plum;
 }
-
-
 
 .row {
   display: flex;
