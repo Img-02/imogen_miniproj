@@ -1,0 +1,71 @@
+body {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size:x-large;
+    color:black;
+    text-align: center;
+    background-color: cornsilk;
+}
+
+#noughts-and-crosses {
+  margin: 0 auto;
+  padding: 0;
+  width: 62vh;
+  height: 62vh;
+  background: pink;
+}
+
+#cell-1:hover {
+  background-color: plum;
+}
+
+
+#cell-2:hover {
+  background-color: plum;
+}
+
+#cell-3:hover {
+  background-color: plum;
+}
+
+#cell-4:hover {
+  background-color: plum;
+}
+
+#cell-5:hover {
+  background-color: plum;
+}
+
+#cell-6:hover {
+  background-color: plum;
+}
+
+#cell-7:hover {
+  background-color: plum;
+}
+
+#cell-8:hover {
+  background-color: plum;
+}
+
+#cell-9:hover {
+  background-color: plum;
+}
+
+
+
+.row {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+.cell {
+  background: hotpink;
+  margin: 5px;
+  flex: 1 0 auto;
+}
+
+.cell:before {
+  content: '';
+  float: left;
+  padding-top: 100%;
+}
