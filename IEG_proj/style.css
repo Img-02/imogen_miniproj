@@ -3,7 +3,7 @@ body {
     background-color: cornsilk;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: purple;
-    font-size: 50px;
+    font-size: 100px;
 }
 
 h1 {
@@ -30,6 +30,7 @@ h1 {
   background: pink;
 }
 
+
 #scoreboard {
   margin: 20px;
   padding: 5px;
@@ -44,6 +45,7 @@ h1 {
   text-transform: uppercase;
   border: 20px solid hotpink;
 }
+
 
 .row {
   display: flex;
