@@ -7,26 +7,29 @@
       <link rel="stylesheet" href="style.css">
 </head>
 <body>   
-    <h1> Naughts and Crosses </h1>
+<marquee width="500" height="150"><h1>Naughts and Crosses</h1></marquee>
 <div id="noughts-and-crosses">
   <div class="row">
-    <div class="cell" id="cell-1"></div>
-    <div class="cell" id="cell-2"></div>
-    <div class="cell" id="cell-3"></div>
+    <div class="cell" id="cell-1" onclick="place(this)"></div>
+    <div class="cell" id="cell-2" onclick="place(this)"></div>
+    <div class="cell" id="cell-3" onclick="place(this)"></div>
   </div>
   <div class="row">
-    <div class="cell" id="cell-4"></div>
-    <div class="cell" id="cell-5"></div>
-    <div class="cell" id="cell-6"></div>
+    <div class="cell" id="cell-4" onclick="place(this)"></div>
+    <div class="cell" id="cell-5" onclick="place(this)"></div>
+    <div class="cell" id="cell-6" onclick="place(this)"></div>
   </div>
   <div class="row">
-    <div class="cell" id="cell-7"></div>
-    <div class="cell" id="cell-8"></div>
-    <div class="cell" id="cell-9"></div>
+    <div class="cell" id="cell-7" onclick="place(this)"></div>
+    <div class="cell" id="cell-8" onclick="place(this)"></div>
+    <div class="cell" id="cell-9" onclick="place(this)"></div>
   </div>
-  <div class="container">
-    <div id="score">
-      <p> Score: 0</p>
+  <div class="container" id="scoreboard">
+    <div>
+      <p> Player 1: 0</p>
+    </div>
+    <div>
+      <p> Player 2: 0</p>
     </div>
 </div>
  <script src="script.js"></script>

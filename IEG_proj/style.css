@@ -1,9 +1,25 @@
 body {
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size:x-large;
-    color:black;
     text-align: center;
     background-color: cornsilk;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: purple;
+    font-size: 50px;
+}
+
+h1 {
+  margin-left: 0;
+  margin-right: 0;
+  margin: 10;
+  padding: 10;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color:pink;
+  color:hotpink;
+  font-size:50px;
+  color:transparent;
+  -webkit-text-stroke: 1px white;
+  text-shadow: -4px -4px  hotpink;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 #noughts-and-crosses {
@@ -14,40 +30,19 @@ body {
   background: pink;
 }
 
-#cell-1:hover {
-  background-color: plum;
-}
-
-#cell-2:hover {
-  background-color: plum;
-}
-
-#cell-3:hover {
-  background-color: plum;
-}
-
-#cell-4:hover {
-  background-color: plum;
-}
-
-#cell-5:hover {
-  background-color: plum;
-}
-
-#cell-6:hover {
-  background-color: plum;
-}
-
-#cell-7:hover {
-  background-color: plum;
-}
-
-#cell-8:hover {
-  background-color: plum;
-}
-
-#cell-9:hover {
-  background-color: plum;
+#scoreboard {
+  margin: 20px;
+  padding: 5px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color:pink;
+  color:hotpink;
+  font-size:30px;
+  color:transparent;
+  -webkit-text-stroke: 1px white;
+  text-shadow: -4px -4px  hotpink;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 20px solid hotpink;
 }
 
 .row {
@@ -55,10 +50,11 @@ body {
   flex-flow: row;
   justify-content: space-around;
 }
+
 .cell {
   background: hotpink;
   margin: 5px;
-  flex: 1 0 auto;
+  flex:1 0; /*1 means cells grow equally and 0 is dont shrink */
 }
 
 .cell:before {
@@ -66,3 +62,11 @@ body {
   float: left;
   padding-top: 100%;
 }
+
+.cell:hover {
+  background-color: plum;
+}
+
+
+
+
