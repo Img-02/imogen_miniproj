@@ -30,20 +30,16 @@ h1 {
   background: pink;
 }
 
+#playerDiv {
+  font-size: 30px;
+  padding: 30px;
+}
 
 #scoreboard {
-  margin: 20px;
-  padding: 5px;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  background-color:pink;
-  color:hotpink;
-  font-size:30px;
-  color:transparent;
-  -webkit-text-stroke: 1px white;
-  text-shadow: -4px -4px  hotpink;
-  font-weight: 600;
-  text-transform: uppercase;
-  border: 20px solid hotpink;
+  padding: 10px;
+  border: solid hotpink;
+  border: 5px;
+  font-size: 30px;
 }
 
 

@@ -1,7 +1,5 @@
 
-let board = [["","",""],
-            ["","",""],
-            ["","",""]];
+let board = ["","","","","","","","","",]
 
 let currentPlayer = "O"
 let gameActive = true;
@@ -13,47 +11,45 @@ let score = 0;
 //*check for winning combos
 
 
-//all div cells are selected 
-const cells = document.querySelectorAll(".cell");
+//all div cells are selected
+const cells = document.querySelectorAll(".cell")
 
 //.innerText sets HTML content of element 
-function place(currentCell) {
-    //if (gameActive == true)
-      currentCell.innerText = currentPlayer; //add text for each play 
-      console.log(currentCell)
-      const currentCell = document.getElementByClass("cell");
+function currentPlay(cell) {
+     //add text for each play 
+        if (cell.innerText === ""){ //if cell is blank
+            cell.innerText = currentPlayer; //text is current player
+            
+            let cellid = cell.id;
+            board[cellid] = currentPlayer;
+            console.log(board)
+
+            currentPlayer = currentPlayer === "O" ? "X" : "O"; //if o then x else o
+
+            document.getElementById("playerDiv").innerText = `its Player ${currentPlayer}'s turn`; //inform players
       
-    if (currentPlayer == "O"){ 
-        currentPlayer = "X"; //change O to X
-        alert("Pass the computer to Player 2");
-      }
-      
-      else {
-        currentPlayer = "O"; //continues with O player which is default 
-        alert("Pass the computer to Player 1");
+            console.log(`Clicked cell is ${cellid} text: ${cell.textContent}`); //debugging
+            //now im getting cell id and the text played, stored as cellid and cell.textcontent
+            checkWin();
         }
     }
 
-function checkBoard(board, currentPlayer){
-    //had to look these up lol
+cells.forEach(cell => { //for each cell add a click event and pass this to the play function
+    cell.addEventListener("click", () => currentPlay(cell));
+});
+
+
+function checkWin(){
     const winConditions = [
        [0, 1, 2], [3, 4, 5], [6, 7, 8], // horizontal
        [0, 3, 6], [1, 4, 7], [2, 5, 8], // vertical
        [0, 4, 8], [2, 4, 6] // diagonal
-    ];
+                            ]
 
-    for(let row = 0; row < board.length; row++)
-        if (
-        //horizontalwin
-        //vertical win
-        //diagonal win
+        for (i = 0; i < board.length; i++){
+            
+        }
+
 }
-
-
-
-function startGame(){
-    //add a button to start game
-    //check if gameActive set to true, change if not
-    //load board ? 
-}
-
+    //had to look these up lol
+    
