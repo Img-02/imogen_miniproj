@@ -1,5 +1,8 @@
 
-let board = ["","","","","","","","","",];
+let board = [["","",""],
+            ["","",""],
+            ["","",""]];
+
 let currentPlayer = "O"
 let gameActive = true;
 let score = 0;
@@ -14,35 +17,39 @@ let score = 0;
 const cells = document.querySelectorAll(".cell");
 
 //.innerText sets HTML content of element 
-function place(play) {
+function place(currentCell) {
     //if (gameActive == true)
-      play.innerText = currentPlayer; //add text for each play 
-      if (currentPlayer == "O"){ 
+      currentCell.innerText = currentPlayer; //add text for each play 
+      console.log(currentCell)
+      const currentCell = document.getElementByClass("cell");
+      
+    if (currentPlayer == "O"){ 
         currentPlayer = "X"; //change O to X
         alert("Pass the computer to Player 2");
       }
+      
       else {
         currentPlayer = "O"; //continues with O player which is default 
         alert("Pass the computer to Player 1");
         }
     }
 
-function checkBoard(){
+function checkBoard(board, currentPlayer){
     //had to look these up lol
     const winConditions = [
-       [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
-       [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
-       [0, 4, 8], [2, 4, 6] // Diagonals
+       [0, 1, 2], [3, 4, 5], [6, 7, 8], // horizontal
+       [0, 3, 6], [1, 4, 7], [2, 5, 8], // vertical
+       [0, 4, 8], [2, 4, 6] // diagonal
     ];
 
-    for(let y = 0; y < winConditions.length; )
-
+    for(let row = 0; row < board.length; row++)
+        if (
+        //horizontalwin
+        //vertical win
+        //diagonal win
 }
 
-function restartGame(){
-    //button to wipe board set all to blank
-    
-}
+
 
 function startGame(){
     //add a button to start game
