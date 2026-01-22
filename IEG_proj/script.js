@@ -23,6 +23,7 @@ let score = 0
 //all div cells are selected
 const cells = document.querySelectorAll(".cell")
 
+
 //.innerText sets HTML content of element 
 function currentPlay(cell) {
      //add text for each play 
@@ -35,7 +36,6 @@ function currentPlay(cell) {
             checkWin()
 
             currentPlayer = currentPlayer === "O" ? "X" : "O" //if o then x else o
-
             document.getElementById("playerDiv").innerText = `its Player ${currentPlayer}'s turn` //inform players
       
             console.log(`Clicked cell is ${cellid}, text: ${cell.textContent}`) 
@@ -52,6 +52,7 @@ cells.forEach(cell => { //for each cell add a click event and pass this to the p
 })
 
 
+
 function checkWin(){
     for (i of winConditions) {
         let val1 = cells[i[0]].innerText
@@ -62,12 +63,14 @@ function checkWin(){
             && val1 === val2 && val2 === val3 ){
                 if (currentPlayer === "O"){
                     console.log(`Winner is O`)
+                    playDiv.innerText = `Winner! Player ${currentPlayer} has won! `
                 } else if (currentPlayer === "x") {
-                     console.log(`Winner is x`)}
+                     console.log(`Winner is x`)
+                     playDiv.innerText = `Winner! Player ${currentPlayer} has won! `
                 }
             }
         }
-                   
+}               
                 
 
 
