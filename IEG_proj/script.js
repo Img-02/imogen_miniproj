@@ -14,44 +14,41 @@ let currentPlayer = "O"
 let gameActive = true
 let score = 0
 
-//for n&c game need
-//*start game function 
-//*select user type function (x or o)
-//*check for winning combos
 
-
-//all div cells are selected
 const cells = document.querySelectorAll(".cell")
+let text = document.getElementById("playerDiv")
+console.log(`Text acquired: ${text}`)
 
 
-//.innerText sets HTML content of element 
 function currentPlay(cell) {
-     //add text for each play 
-        if (cell.innerText === ""){ //if cell is blank
+    if (!gameActive || cell.innerText !== "") return;
+
             cell.innerText = currentPlayer //text is current player
 
             let cellid = cell.id
             board[cellid] = currentPlayer
             console.log(board)
             checkWin()
+            
 
+            if (gameActive) {
             currentPlayer = currentPlayer === "O" ? "X" : "O" //if o then x else o
-            document.getElementById("playerDiv").innerText = `its Player ${currentPlayer}'s turn` //inform players
+            text.innerText = `its Player ${currentPlayer}'s turn` //inform players
       
             console.log(`Clicked cell is ${cellid}, text: ${cell.textContent}`) 
+            }
             
             
             //debugging
             //now im getting cell id and the text played, stored as cellid and cell.textcontent
             
         }
-    }
+    
+
 
 cells.forEach(cell => { //for each cell add a click event and pass this to the play function
     cell.addEventListener("click", () => currentPlay(cell))
 })
-
-
 
 function checkWin(){
     for (i of winConditions) {
@@ -59,24 +56,32 @@ function checkWin(){
         let val2 = cells[i[1]].innerText
         let val3 = cells[i[2]].innerText
         
-         if (val1 !== "" && val2 !=="" && val3 !=="" 
+         if (val1 !=="" && val2 !=="" && val3 !=="" 
             && val1 === val2 && val2 === val3 ){
-                if (currentPlayer === "O"){
-                    console.log(`Winner is O`)
-                    playDiv.innerText = `Winner! Player ${currentPlayer} has won! `
-                } else if (currentPlayer === "x") {
-                     console.log(`Winner is x`)
-                     playDiv.innerText = `Winner! Player ${currentPlayer} has won! `
-                }
-            }
+                text.innerText = `Congratulations! Winner is Player ${currentPlayer}!`
+                gameActive = false 
+                return;
+        // } else if (val1 !=="" && val2 !=="" && val3 !=="" 
+        //     && val1 !== val2 && val2 !== val3) 
+        //     text.innerText = `It's a Draw`
+        //     gameActive = false
+        //     return;
         }
-}               
+    }}
                 
+      
+            
 
 
-    
-        
-                            
-
-
-  
+// function checkDraw(){
+//     for (cell in cells){
+//         let val1 = cell.innerText
+//         let val2 = cell.innerText
+//         let val3 = cell.innerText 
+//         if(val1 !=="" && val2 !=="" && val3 !=="" 
+//             && val1 !== val2 && val2 !== val3)
+//             text.innerText = `It's a Draw`
+//             gameActive = false
+//             return;
+//         }
+//     
