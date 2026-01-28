@@ -28,7 +28,7 @@ function currentPlay(cell) {
             let cellid = cell.id
             board[cellid] = currentPlayer
             console.log(board)
-            checkWin()
+            checkWin(cell)
             
 
             if (gameActive) {
@@ -44,13 +44,11 @@ function currentPlay(cell) {
             
         }
     
-
-
 cells.forEach(cell => { //for each cell add a click event and pass this to the play function
     cell.addEventListener("click", () => currentPlay(cell))
 })
 
-function checkWin(){
+function checkWin(cell){
     for (i of winConditions) {
         let val1 = cells[i[0]].innerText
         let val2 = cells[i[1]].innerText
@@ -61,27 +59,9 @@ function checkWin(){
                 text.innerText = `Congratulations! Winner is Player ${currentPlayer}!`
                 gameActive = false 
                 return;
-        // } else if (val1 !=="" && val2 !=="" && val3 !=="" 
-        //     && val1 !== val2 && val2 !== val3) 
-        //     text.innerText = `It's a Draw`
-        //     gameActive = false
-        //     return;
-        }
-    }}
-                
+            } else if (!cell === '' && !board.includes('')){ //! means not so if there are no empty spaces left 
+                console.log("its a draw") //includes is what it is 
+            }}}
       
             
 
-
-// function checkDraw(){
-//     for (cell in cells){
-//         let val1 = cell.innerText
-//         let val2 = cell.innerText
-//         let val3 = cell.innerText 
-//         if(val1 !=="" && val2 !=="" && val3 !=="" 
-//             && val1 !== val2 && val2 !== val3)
-//             text.innerText = `It's a Draw`
-//             gameActive = false
-//             return;
-//         }
-//     
