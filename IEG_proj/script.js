@@ -13,7 +13,7 @@ const winConditions = [
 let currentPlayer = "O"
 let gameActive = true
 let score = 0
-
+let moveCount = 0
 
 const cells = document.querySelectorAll(".cell")
 let text = document.getElementById("playerDiv")
@@ -28,7 +28,9 @@ function currentPlay(cell) {
             let cellid = cell.id
             board[cellid] = currentPlayer
             console.log(board)
-            checkWin(cell)
+            moveCount ++
+            checkWin()
+            checkDraw()
             
 
             if (gameActive) {
@@ -48,7 +50,7 @@ cells.forEach(cell => { //for each cell add a click event and pass this to the p
     cell.addEventListener("click", () => currentPlay(cell))
 })
 
-function checkWin(cell){
+function checkWin(){
     for (i of winConditions) {
         let val1 = cells[i[0]].innerText
         let val2 = cells[i[1]].innerText
@@ -59,9 +61,15 @@ function checkWin(cell){
                 text.innerText = `Congratulations! Winner is Player ${currentPlayer}!`
                 gameActive = false 
                 return;
-            } else if (!cell === '' && !board.includes('')){ //! means not so if there are no empty spaces left 
-                console.log("its a draw") //includes is what it is 
-            }}}
+            } 
+            }
+        }
       
-            
+function checkDraw(){
+    if( moveCount === 9 && gameActive === true){
+        text.innerText = `It's a Draw!!`
+        gameActive = false
+        return;
+    }
+}     
 
