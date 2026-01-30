@@ -13,7 +13,7 @@ const winConditions = [
 let currentPlayer = "O"
 let gameActive = true
 let score = 0
-
+let moveCount = 0
 
 const cells = document.querySelectorAll(".cell")
 let text = document.getElementById("playerDiv")
@@ -28,7 +28,9 @@ function currentPlay(cell) {
             let cellid = cell.id
             board[cellid] = currentPlayer
             console.log(board)
+            moveCount ++
             checkWin()
+            checkDraw()
             
 
             if (gameActive) {
@@ -44,8 +46,6 @@ function currentPlay(cell) {
             
         }
     
-
-
 cells.forEach(cell => { //for each cell add a click event and pass this to the play function
     cell.addEventListener("click", () => currentPlay(cell))
 })
@@ -61,27 +61,15 @@ function checkWin(){
                 text.innerText = `Congratulations! Winner is Player ${currentPlayer}!`
                 gameActive = false 
                 return;
-        // } else if (val1 !=="" && val2 !=="" && val3 !=="" 
-        //     && val1 !== val2 && val2 !== val3) 
-        //     text.innerText = `It's a Draw`
-        //     gameActive = false
-        //     return;
+            } 
+            }
         }
-    }}
-                
       
-            
+function checkDraw(){
+    if( moveCount === 9 && gameActive === true){
+        text.innerText = `It's a Draw!!`
+        gameActive = false
+        return;
+    }
+}     
 
-
-// function checkDraw(){
-//     for (cell in cells){
-//         let val1 = cell.innerText
-//         let val2 = cell.innerText
-//         let val3 = cell.innerText 
-//         if(val1 !=="" && val2 !=="" && val3 !=="" 
-//             && val1 !== val2 && val2 !== val3)
-//             text.innerText = `It's a Draw`
-//             gameActive = false
-//             return;
-//         }
-//     
