@@ -12,7 +12,6 @@ const winConditions = [
 
 let currentPlayer = "O"
 let gameActive = true
-let score = 0
 let moveCount = 0
 
 const cells = document.querySelectorAll(".cell")
